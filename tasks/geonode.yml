@@ -43,10 +43,10 @@
   - libpng-dev
   become: yes
 
-- name: install known_hosts file to access GitHub
-  copy:
-    src: known_hosts
-    dest: "{{ ssh_dir }}/known_hosts"
+- name: install GitHub to known_hosts file
+  known_hosts:
+    name: GitHub
+    key: "{{ lookup('file', 'known_hosts') }}"
 
 - name: check if project template already exists
   stat:
