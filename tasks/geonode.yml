@@ -45,7 +45,7 @@
 
 - name: install GitHub to known_hosts file
   known_hosts:
-    name: GitHub
+    name: github.com
     key: "{{ lookup('file', 'known_hosts') }}"
 
 - name: check if project template already exists
